@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalem Analytics — Вход</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header class="admin-topbar">
+    <div class="admin-container admin-nav">
+      <a href="../index.html" class="brand-link">← На сайт издательства</a>
+      <nav class="admin-menu">
+        <a class="active" href="login.html">Вход</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="login-wrap">
+    <section class="login-card">
+      <span class="pill">Скрытая аналитика</span>
+      <h1>Вход в панель аналитики</h1>
+      <p>Эта страница не показывается обычным посетителям. Она создана для владельца сайта и дипломной демонстрации.</p>
+      <form id="adminLoginForm" class="admin-form">
+        <label>
+          Логин
+          <input type="text" id="adminUser" placeholder="admin" required>
+        </label>
+        <label>
+          Пароль
+          <input type="password" id="adminPass" placeholder="Введите пароль" required>
+        </label>
+        <button class="admin-btn" type="submit">Войти</button>
+      </form>
+      <div class="note">Демо-данные: логин <strong>admin</strong>, пароль <strong>Kalem2026!</strong></div>
+      <div class="warning">
+        Важно: так как это статическая версия на HTML/CSS/JS, защита здесь демонстрационная.
+        Для реальной приватной аналитики нужен backend, база данных и настоящая авторизация.
+      </div>
+    </section>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>

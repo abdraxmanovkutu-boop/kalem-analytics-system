@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalem Analytics — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header class="admin-topbar">
+    <div class="admin-container admin-nav">
+      <a href="../index.html" class="brand-link">Издательский дом Калем</a>
+      <nav class="admin-menu">
+        <a href="dashboard.html" class="active">Обзор</a>
+        <a href="#audience">Аудитория</a>
+        <a href="#products">Товары</a>
+        <a href="#surveys">Опросы</a>
+      </nav>
+      <div class="admin-actions">
+        <button class="ghost-btn" id="resetDataBtn">Сбросить данные</button>
+        <button class="primary-btn" id="logoutBtn">Выйти</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-main admin-container">
+    <section class="hero-panel">
+      <div>
+        <span class="pill">Analytics Dashboard</span>
+        <h1>Сводная аналитика по сайту издательства</h1>
+        <p>Здесь показываются заходы, просмотры, клики, избранное, заказы и результаты опроса по возрасту и регионам.</p>
+      </div>
+      <div class="hero-mini">
+        <div><strong id="conversionValue">0%</strong><span>Конверсия в заказ</span></div>
+        <div><strong id="surveyCount">0</strong><span>Ответов в опросе</span></div>
+      </div>
+    </section>
+
+    <section class="metrics-grid">
+      <article class="metric-card"><span>Посещения</span><strong id="visitsValue">0</strong></article>
+      <article class="metric-card"><span>Просмотры страниц</span><strong id="pageViewsValue">0</strong></article>
+      <article class="metric-card"><span>Клики</span><strong id="clicksValue">0</strong></article>
+      <article class="metric-card"><span>Избранное</span><strong id="favoritesValue">0</strong></article>
+      <article class="metric-card"><span>Заказы</span><strong id="ordersValue">0</strong></article>
+      <article class="metric-card"><span>Уникальные товары в статистике</span><strong id="productsCountValue">0</strong></article>
+    </section>
+
+    <section class="chart-grid">
+      <article class="panel-card wide">
+        <div class="panel-head">
+          <h2>Посещения за последние дни</h2>
+          <span>Линейный график</span>
+        </div>
+        <svg id="visitsChart" viewBox="0 0 700 240" class="chart-svg"></svg>
+      </article>
+      <article class="panel-card" id="audience">
+        <div class="panel-head">
+          <h2>Возраст аудитории</h2>
+          <span>Кольцевая диаграмма</span>
+        </div>
+        <div class="donut-wrap">
+          <div class="donut" id="ageDonut"></div>
+          <div class="legend" id="ageLegend"></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="chart-grid second">
+      <article class="panel-card" id="surveys">
+        <div class="panel-head">
+          <h2>Регионы посещений</h2>
+          <span>На основе опроса</span>
+        </div>
+        <div class="bars" id="regionBars"></div>
+      </article>
+      <article class="panel-card" id="products">
+        <div class="panel-head">
+          <h2>Топ товаров</h2>
+          <span>Просмотры / избранное / заказы</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Товар</th>
+                <th>Просмотры</th>
+                <th>Избранное</th>
+                <th>Заказы</th>
+              </tr>
+            </thead>
+            <tbody id="productsTableBody"></tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>
